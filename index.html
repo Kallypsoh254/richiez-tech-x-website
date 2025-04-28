@@ -1524,6 +1524,90 @@ footer {
   }
 }
 
+/* --- Navbar Mobile Responsive --- */
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+  }
+
+  nav ul.active {
+    max-height: 500px; /* enough height to show links */
+  }
+
+  nav .menu-icon {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #00e6f6;
+  }
+
+  .nav-links li {
+    padding: 15px 0;
+  }
+}
+
+/* --- Hero Section Mobile --- */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+}
+
+/* --- Portfolio Responsive Grid --- */
+@media (max-width: 1200px) {
+  .portfolio-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .portfolio-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .portfolio-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Service Cards Mobile --- */
+@media (max-width: 768px) {
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* --- Blog Cards Mobile --- */
+@media (max-width: 768px) {
+  .blog-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* --- Footer Mobile Layout --- */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 
 </style>
 
@@ -1775,6 +1859,10 @@ $(document).ready(function () {
     });
   });
 });
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('active');
+}
 
 </script>
 </body>
