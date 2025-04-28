@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
   <title>Tech-X | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
@@ -23,7 +24,8 @@
     <li><a href="#testimonial">Testimonial</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
 </nav>
 
 <!-- Hero Section -->
@@ -514,45 +516,36 @@ body {
   background-color: #0d0d0d;
   color: #d0d0d0;
 }
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    text-align: center;
+  }
 
-/* Navbar */
-nav {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-  backdrop-filter: blur(10px);
+  nav ul.active {
+    max-height: 500px; /* Big enough to show all menu links */
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 2rem;
+    color: #00e6f6;
+    cursor: pointer;
+  }
+
+  .nav-links li {
+    padding: 15px 0;
+  }
 }
 
-nav .logo {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #00e6f6;
-  text-shadow: 0 0 10px #00e6f6;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  font-size: 1rem;
-  color: #d0d0d0;
-  transition: 0.3s;
-}
-
-nav ul li a:hover {
-  color: #00e6f6;
-}
 
 /* Hero Section */
 .hero {
